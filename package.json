@@ -1,0 +1,32 @@
+{
+  "name": "context-vault-app",
+  "version": "1.0.0",
+  "description": "Context Vault - AI Workbench MCP Application",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "mcp-server",
+    "workbench-widget"
+  ],
+  "scripts": {
+    "dev": "docker-compose up",
+    "dev:build": "docker-compose up --build",
+    "down": "docker-compose down",
+    "clean": "docker-compose down -v",
+    "backend": "cd backend && npm run dev",
+    "mcp": "cd mcp-server && npm run dev",
+    "widget": "cd workbench-widget && npm run dev",
+    "test": "npm run test --workspaces",
+    "build": "npm run build --workspaces",
+    "install:all": "npm install && npm install --workspaces"
+  },
+  "keywords": [
+    "mcp",
+    "ai",
+    "context-vault",
+    "workflow",
+    "orchestration"
+  ],
+  "author": "",
+  "license": "MIT"
+}
