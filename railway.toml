@@ -1,0 +1,23 @@
+[[services]]
+name = "backend"
+source = "backend"
+
+[services.build]
+builder = "NIXPACKS"
+buildCommand = "npm install && npm run build"
+
+[services.deploy]
+startCommand = "npm run start"
+restartPolicyType = "ON_FAILURE"
+
+[[services]]
+name = "mcp-server"
+source = "mcp-server"
+
+[services.build]
+builder = "NIXPACKS"
+buildCommand = "npm install && npm run build"
+
+[services.deploy]
+startCommand = "npm run start"
+restartPolicyType = "ON_FAILURE"
